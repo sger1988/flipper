@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="MemoryFlipper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg" translatesAutoresizingMaskIntoConstraints="NO" id="pac-I6-pD8">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FnZ-WS-cRM">
+                                <rect key="frame" x="173.5" y="91.5" width="320" height="192"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="6G6-gT-IvA"/>
+                                    <constraint firstAttribute="width" constant="320" id="Uvx-RW-Mb3"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yvg-8f-z6H">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="6i8-6d-YMX" customClass="CardCell" customModule="MemoryFlipper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-T4-mdp" customClass="RoundedImage" customModule="MemoryFlipper" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="9pe-T4-mdp" firstAttribute="top" secondItem="6i8-6d-YMX" secondAttribute="top" id="KEm-5a-YYk"/>
+                                            <constraint firstAttribute="bottom" secondItem="9pe-T4-mdp" secondAttribute="bottom" id="coc-ru-wgv"/>
+                                            <constraint firstAttribute="trailing" secondItem="9pe-T4-mdp" secondAttribute="trailing" id="dPp-Bl-JiB"/>
+                                            <constraint firstItem="9pe-T4-mdp" firstAttribute="leading" secondItem="6i8-6d-YMX" secondAttribute="leading" id="e7I-Ad-KEM"/>
+                                        </constraints>
+                                        <size key="customSize" width="64" height="64"/>
+                                        <connections>
+                                            <outlet property="cardImage" destination="9pe-T4-mdp" id="nTw-fr-3a7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="S4M-oP-jhz"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6JI-tc-vtM"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pac-I6-pD8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BUL-tn-QyU"/>
+                            <constraint firstItem="pac-I6-pD8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MFO-Wq-6zt"/>
+                            <constraint firstAttribute="bottom" secondItem="pac-I6-pD8" secondAttribute="bottom" id="jhl-SL-Zxk"/>
+                            <constraint firstAttribute="trailing" secondItem="pac-I6-pD8" secondAttribute="trailing" id="mIa-sh-O2R"/>
+                            <constraint firstItem="FnZ-WS-cRM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t9N-Td-sCb"/>
+                            <constraint firstItem="FnZ-WS-cRM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ucb-Ia-zLz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardsCollection" destination="FnZ-WS-cRM" id="JJx-8Z-rdK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bkg" width="1920" height="1280"/>
+        <image name="generic" width="256" height="256"/>
+    </resources>
+</document>
